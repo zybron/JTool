@@ -9,6 +9,27 @@
     <title>City of Heroes Freedom Account Portal</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 	<script src="jquery-3.4.1.min.js"></script>
+    <script>
+	function copyToClipboard(e) {
+	    var tempItem = document.createElement('input');
+
+	    tempItem.setAttribute('type','text');
+	    tempItem.setAttribute('display','none');
+
+	    let content = e;
+	    if (e instanceof HTMLElement) {
+			content = e.innerHTML;
+	    }
+
+	    tempItem.setAttribute('value',content);
+	    document.body.appendChild(tempItem);
+
+	    tempItem.select();
+	    document.execCommand('Copy');
+
+	    tempItem.parentElement.removeChild(tempItem);
+	}
+    </script>
 </head>
 <body>
 
