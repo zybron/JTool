@@ -94,6 +94,8 @@ if (!(isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' ||
 			);
 			$row = sqlsrv_fetch_array($result,SQLSRV_FETCH_ASSOC);
 		}
+		
+		$_SESSION['remoteip'] = $row['ip'];
 	
 		return '
 			<div class="shard_tr deets_tr" id="shard_'.$row['id'].'" data-id="'.$row['id'].'" data-name="'.$row['name'].'">
