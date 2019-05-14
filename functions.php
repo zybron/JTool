@@ -113,7 +113,24 @@ if (!(isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' ||
 				<div id="shard_spinner_'.$row['id'].'" class="spinner"></div>
 			</div>
 		';
-	}	
+	}
+	
+	function print_remoteip()
+	{
+		$authconn = auth_connect();
+		$result = sqlsrv_query(
+			$authconn,
+			"SELECT ip FROM dbo.server",
+			array($row)
+		);
+		$row = sqlsrv_fetch_array($result,SQLSRV_FETCH_ASSOC);
+
+		if ($row) {
+			return $row['ip'];
+		} else {
+			return 'Unable to access server external IP address.';
+		}
+	}
 
 	// Why do this here? Same reason: for updating data based on ajax changes
 	function available_for_shards()
