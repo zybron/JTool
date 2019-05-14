@@ -822,9 +822,12 @@
 	<div class="greyblock">
 		<p>To download the client and be able to log in, please follow these steps:</p>
 		<ol>
-			<li>Download the client <a href="https://127.0.0.1/tequila.exe">from here</a>.</li>
-			<li>Run "Tequila.exe" and login with the account created above.</li>
-		</ol>
+            		<li>Download CreamSoda <a href="https://github.com/thunderspynetwork/creamsoda/releases">from here</a>.</li>
+            		<li>Save the downloaded exe in the same folder you want to install City of Heroes.</li>
+            		<li>Run CreamSoda.exe. On the first run it will ask you to provide a folder location for the downloads. Choose the same folder you used above.</li>
+			<li>When it has finished verifying the files, click Options and add this manifest location to the list of manifests: https://coh.zybron.com/score/manifest.xml <button onclick="copyToClipboard('https://coh.zybron.com/score/manifest.xml')">Copy</button></li>
+			<li>Click Re-Validate and when it has completed, click Play to login to City of Heroes with the account information you provided above.</li>
+        	</ol>
 		<p>If you already have the SCORE client downloaded, you can instead launch with the following command line:
 		<pre class="blackblock" style="font-size:16px">start .\score.exe -auth <?php echo $_SERVER['REMOTE_ADDR'];?> -patchdir score -patchversion 2019.04.19 -noversioncheck</pre>
 		</p>
