@@ -829,7 +829,7 @@
 			<li>Click Re-Validate and when it has completed, click Play to login to City of Heroes with the account information you provided above.</li>
         	</ol>
 		<p>If you already have the SCORE client downloaded, you can instead launch with the following command line:
-		<pre class="blackblock" style="font-size:16px">start .\score.exe -auth <?php echo $_SERVER['REMOTE_ADDR'];?> -patchdir score -patchversion 2019.04.19 -noversioncheck</pre>
+		<pre class="blackblock" style="font-size:16px">start .\score.exe -auth <?php echo $_SESSION['remoteip'];?> -patchdir score -patchversion 2019.04.19 -noversioncheck</pre>
 		</p>
 	</div>
 
